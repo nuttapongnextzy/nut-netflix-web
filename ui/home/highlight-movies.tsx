@@ -15,7 +15,7 @@ export default function HighlightMovies({ title, movies }: { title: String, movi
                         key={index}
                     >
                         <Link
-                            href="#"
+                            href="/detail/1"
                             className="cursor-pointer"
                         >
                             <Image
