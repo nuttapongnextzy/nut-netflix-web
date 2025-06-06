@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Metadata } from 'next';
 
 function Page() {
     return (
@@ -58,3 +59,7 @@ function Page() {
 }
 
 export default Page;
+
+export const metadata: Metadata = {
+  title: 'Login',
+};

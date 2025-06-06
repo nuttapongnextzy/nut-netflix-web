@@ -2,16 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import UserTable from "@/ui/select-profile/user-table";
 import { User } from "../../lib/definitions";
-import { ChatBubbleOvalLeftIcon, PencilSquareIcon } from '@heroicons/react/24/outline';
-
-function MessageEditIcon() {
-    return (
-        <div className="relative w-6 h-6">
-            <ChatBubbleOvalLeftIcon className="absolute top-0 left-0 w-6 h-6 text-gray-700" />
-            <PencilSquareIcon className="absolute bottom-0 right-0 w-3 h-3 text-gray-700" />
-        </div>
-    );
-}
+import { PencilSquareIcon } from '@heroicons/react/24/outline';
+import { Metadata } from 'next';
 
 const users: User[] = [
     { name: 'DH', imageUrl: '/user-1.svg' },
@@ -62,3 +54,7 @@ function Page() {
 }
 
 export default Page;
+
+export const metadata: Metadata = {
+  title: 'Select Profile',
+};

@@ -3,6 +3,7 @@ import Image from "next/image";
 import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
 import { Movie } from "../lib/definitions";
 import HighlightMovies from "@/ui/home/highlight-movies";
+import { Metadata } from 'next';
 
 const movies: Movie[] = [
   { name: '1', imageUrl: '/movie-poster-1.svg' },
@@ -75,3 +76,7 @@ function Page() {
 }
 
 export default Page;
+
+export const metadata: Metadata = {
+  title: 'Home - Nutflix',
+};
