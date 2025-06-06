@@ -51,20 +51,23 @@ function Page() {
           </Link>
         </div>
 
-        <HighlightMovies
-          title={"Trending Now"}
-          movies={movies}
-        />
+        <div className="p-2">
+          <HighlightMovies
+            title={"Trending Now"}
+            movies={movies}
+          />
 
-        <HighlightMovies
-          title={"Must-Watch"}
-          movies={movies}
-        />
+          <HighlightMovies
+            title={"Must-Watch"}
+            movies={movies}
+          />
 
-        <HighlightMovies
-          title={"Only on NETFLIX"}
-          movies={movies}
-        />
+          <HighlightMovies
+            title={"Only on NETFLIX"}
+            movies={movies}
+          />
+        </div>
+
 
       </main>
     </div>

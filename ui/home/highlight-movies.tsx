@@ -5,7 +5,7 @@ import { Movie } from "../../lib/definitions";
 export default function HighlightMovies({ title, movies }: { title: String, movies: Movie[] }) {
     return (
         <div>
-            <p className="text-white text-lg font-bold px-3 mt-5">
+            <p className="text-white text-lg font-bold px-0 mt-5">
                 {title}
             </p>
 
