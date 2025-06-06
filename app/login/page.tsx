@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-export default function Page() {
+function Page() {
     return (
         <div className="flex bg-blue-950 min-h-screen flex-col items-center justify-center">
             <main>
@@ -49,10 +49,12 @@ export default function Page() {
 
                     <p className="text-lg font-bold text-white text-center mt-50">
                         <span>Don't have an account?</span>
-                        <a href="#" className="font-bold text-red-700 hover:text-red-600 ml-1">Create one</a>
+                        <a href="/select-profile" className="font-bold text-red-700 hover:text-red-600 ml-1">Create one</a>
                     </p>
                 </div>
             </main>
         </div>
     );
 }
+
+export default Page;
