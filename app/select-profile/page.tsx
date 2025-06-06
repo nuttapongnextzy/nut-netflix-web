@@ -1,15 +1,17 @@
 import Link from "next/link";
 import Image from "next/image";
+import UserTable from "@/ui/select-profile/user-table";
+import { User } from "../../lib/definitions";
+
+const users: User[] = [
+    { name: 'DH', imageUrl: '/user-1.svg' },
+    { name: 'Alan', imageUrl: '/user-2.svg' },
+    { name: 'Sam', imageUrl: '/user-3.svg' },
+    { name: 'John"', imageUrl: '/user-4.svg' },
+    { name: 'Adult', imageUrl: '/user-5.svg' },
+];
 
 function Page() {
-    const users = [
-        { name: "DH", imageSrc: "/user-1.svg" },
-        { name: "Alan", imageSrc: "/user-2.svg" },
-        { name: "Sam", imageSrc: "/user-3.svg" },
-        { name: "John", imageSrc: "/user-4.svg" },
-        { name: "Adult", imageSrc: "/user-5.svg" },
-    ];
-
     return (
         <div className="flex flex-col bg-black min-h-screen items-center">
             <main>
@@ -27,21 +29,7 @@ function Page() {
                     <h1 className="mt-30 text-white text-center text-lg font-bold">Who's watching?</h1>
                 </div>
 
-                <div className="grid grid-cols-2 gap-10 mt-10">
-                    {users.map((value, index) => (
-                        <div key={index}>
-                            <Image
-                                src={value.imageSrc}
-                                alt="Description of image"
-                                width={110}
-                                height={110}
-                            />
-                            <p className="text-white text-sm font-bold text-center">
-                                {value.name}
-                            </p>
-                        </div>
-                    ))}
-                </div>
+                <UserTable users={users} />
 
                 <div className="mt-20 mb-10 text-center">
                     <a className="text-white text-xl font-bold hover:text-gray-300"
