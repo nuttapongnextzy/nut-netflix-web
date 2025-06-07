@@ -9,7 +9,7 @@ const movies: Movie[] = [
   { name: '1', imageUrl: '/movie-poster-1.svg' },
   { name: '1', imageUrl: '/movie-poster-1.svg' },
   { name: '1', imageUrl: '/movie-poster-1.svg' },
-  { name: '1"', imageUrl: '/movie-poster-1.svg' },
+  { name: '1', imageUrl: '/movie-poster-1.svg' },
   { name: '1', imageUrl: '/movie-poster-1.svg' },
 ];
 
@@ -27,7 +27,7 @@ function Page() {
               height={40}
             />
             <Link
-              href="/login"
+              href="/search"
             >
               <MagnifyingGlassIcon
                 className="w-6 h-6 text-white"

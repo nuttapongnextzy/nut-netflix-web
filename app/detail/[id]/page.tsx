@@ -6,7 +6,7 @@ const movies: Movie[] = [
     { name: '1', imageUrl: '/movie-poster-1.svg' },
     { name: '1', imageUrl: '/movie-poster-1.svg' },
     { name: '1', imageUrl: '/movie-poster-1.svg' },
-    { name: '1"', imageUrl: '/movie-poster-1.svg' },
+    { name: '1', imageUrl: '/movie-poster-1.svg' },
     { name: '1', imageUrl: '/movie-poster-1.svg' },
 ];
 
@@ -18,7 +18,7 @@ const page = async (
         }>,
     }) => {
     const params = await props.params;
-    console.log(` params: ${params.id}}`)
+    console.log(`params: ${params.id}}`)
 
     const searchParams = await props.searchParams;
     console.log(`searchParams: ${searchParams?.query}`)
@@ -66,7 +66,7 @@ const page = async (
                         className="flex justify-center"
                     >
                         <Link
-                            href="/"
+                            href="/detail/1"
                             className="cursor-pointer"
                         >
                             <Image
