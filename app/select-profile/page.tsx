@@ -16,39 +16,35 @@ const users: User[] = [
 function Page() {
     return (
         <div className="flex flex-col bg-black min-h-screen items-center">
-            <main>
-                <div>
-                    <Image
-                        src="/netflix-logo-large.svg"
-                        alt="Description of image"
-                        width={80}
-                        height={25}
-                        className="mt-10 mx-auto"
-                    />
-                </div>
+            <div>
+                <Image
+                    src="/netflix-logo-large.svg"
+                    alt="Description of image"
+                    width={80}
+                    height={25}
+                    className="mt-10 mx-auto"
+                />
+            </div>
 
-                <div>
-                    <h1 className="mt-30 text-white text-center text-lg font-bold">Who's watching?</h1>
-                </div>
+            <div>
+                <h1 className="mt-30 text-white text-center text-lg font-bold">Who's watching?</h1>
+            </div>
 
-                <UserTable users={users} />
+            <UserTable users={users} />
 
-                <div className="mt-20 mb-10">
-                    <Link
-                        href="#"
-                        className="flex items-center justify-center text-white text-xl font-bold hover:text-gray-300"
-                    >
-                        <span>
-                            Edit
-                        </span>
-                        <span>
-                            <PencilSquareIcon className="w-5 h-5" />
-                        </span>
-                    </Link>
-                </div>
-
-
-            </main>
+            <div className="mt-20 mb-10">
+                <Link
+                    href="#"
+                    className="flex items-center justify-center text-white text-xl font-bold hover:text-gray-300"
+                >
+                    <span>
+                        Edit
+                    </span>
+                    <span>
+                        <PencilSquareIcon className="w-5 h-5" />
+                    </span>
+                </Link>
+            </div>
         </div>
     );
 }
@@ -56,5 +52,5 @@ function Page() {
 export default Page;
 
 export const metadata: Metadata = {
-  title: 'Select Profile',
+    title: 'Select Profile',
 };
