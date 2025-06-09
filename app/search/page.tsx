@@ -4,11 +4,36 @@ import Link from "next/link";
 import Image from "next/image";
 
 const movies: Movie[] = [
-  { name: 'Spider Man', imageUrl: '/movie-poster-1.svg' },
-  { name: 'Star Wars', imageUrl: '/movie-poster-1.svg' },
-  { name: 'The Matrix', imageUrl: '/movie-poster-1.svg' },
-  { name: 'Titanic', imageUrl: '/movie-poster-1.svg' },
-  { name: 'Squid Game', imageUrl: '/movie-poster-1.svg' },
+  {
+    name: 'Spider Man',
+    imageUrl: '/movie-poster-1.svg',
+    portraitImageUrl: '/movie-poster-1.svg',
+    landscapeImageUrl: '/movie-poster-landscape-1.svg',
+  },
+  {
+    name: 'Star Wars',
+    imageUrl: '/movie-poster-1.svg',
+    portraitImageUrl: '/movie-poster-1.svg',
+    landscapeImageUrl: '/movie-poster-landscape-1.svg',
+  },
+  {
+    name: 'The Matrix',
+    imageUrl: '/movie-poster-1.svg',
+    portraitImageUrl: '/movie-poster-1.svg',
+    landscapeImageUrl: '/movie-poster-landscape-1.svg',
+  },
+  {
+    name: 'Titanic',
+    imageUrl: '/movie-poster-1.svg',
+    portraitImageUrl: '/movie-poster-1.svg',
+    landscapeImageUrl: '/movie-poster-landscape-1.svg',
+  },
+  {
+    name: 'Squid Game',
+    imageUrl: '/movie-poster-1.svg',
+    portraitImageUrl: '/movie-poster-1.svg',
+    landscapeImageUrl: '/movie-poster-landscape-1.svg',
+  },
 ];
 
 const page = () => {

@@ -2,13 +2,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { Movie } from "../../../lib/definitions";
 
-const movies: Movie[] = [
-    { name: '1', imageUrl: '/movie-poster-1.svg' },
-    { name: '1', imageUrl: '/movie-poster-1.svg' },
-    { name: '1', imageUrl: '/movie-poster-1.svg' },
-    { name: '1', imageUrl: '/movie-poster-1.svg' },
-    { name: '1', imageUrl: '/movie-poster-1.svg' },
-];
+const movies: Movie[] = Array.from({ length: 5 }, (_, i) => ({
+  name: `${i + 1}`,
+  imageUrl: '/movie-poster-1.svg',
+  portraitImageUrl: '/movie-poster-1.svg',
+  landscapeImageUrl: '/movie-poster-landscape-1.svg',
+}));
 
 const page = async (
     props: {

@@ -6,4 +6,6 @@ export type User = {
 export type Movie = {
     name: string;
     imageUrl: string;
+    portraitImageUrl: string;
+    landscapeImageUrl: string;
 }

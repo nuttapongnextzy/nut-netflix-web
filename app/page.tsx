@@ -7,13 +7,20 @@ import { Metadata } from 'next';
 import TopBar from '../ui/home/top-bar';
 import MovieDetail from '../ui/home/movie-detail';
 
-const movies: Movie[] = [
-  { name: '1', imageUrl: '/movie-poster-1.svg' },
-  { name: '1', imageUrl: '/movie-poster-1.svg' },
-  { name: '1', imageUrl: '/movie-poster-1.svg' },
-  { name: '1', imageUrl: '/movie-poster-1.svg' },
-  { name: '1', imageUrl: '/movie-poster-1.svg' },
-];
+// const movies: Movie[] = [
+//   { name: '1', portraitImageUrl: '/movie-poster-1.svg', landscapeImageUrl: '/movie-poster-lanscape-1.svg' },
+//   { name: '2', portraitImageUrl: '/movie-poster-1.svg', landscapeImageUrl: '/movie-poster-lanscape-1.svg' },
+//   { name: '3', portraitImageUrl: '/movie-poster-1.svg', landscapeImageUrl: '/movie-poster-lanscape-1.svg' },
+//   { name: '4', portraitImageUrl: '/movie-poster-1.svg', landscapeImageUrl: '/movie-poster-lanscape-1.svg' },
+//   { name: '5', portraitImageUrl: '/movie-poster-1.svg', landscapeImageUrl: '/movie-poster-lanscape-1.svg' },
+// ];
+
+const movies: Movie[] = Array.from({ length: 5 }, (_, i) => ({
+  name: `${i + 1}`,
+  imageUrl: '/movie-poster-1.svg',
+  portraitImageUrl: '/movie-poster-1.svg',
+  landscapeImageUrl: '/movie-poster-landscape-1.svg',
+}));
 
 function Page() {
   return (
