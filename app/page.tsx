@@ -8,31 +8,12 @@ import TopBar from '../ui/home/top-bar';
 import MovieDetail from '../ui/home/movie-detail';
 import { fetchMovies } from '../lib/data';
 
-// const movies: Movie[] = [
-//   { name: '1', portraitImageUrl: '/movie-poster-1.svg', landscapeImageUrl: '/movie-poster-lanscape-1.svg' },
-//   { name: '2', portraitImageUrl: '/movie-poster-1.svg', landscapeImageUrl: '/movie-poster-lanscape-1.svg' },
-//   { name: '3', portraitImageUrl: '/movie-poster-1.svg', landscapeImageUrl: '/movie-poster-lanscape-1.svg' },
-//   { name: '4', portraitImageUrl: '/movie-poster-1.svg', landscapeImageUrl: '/movie-poster-lanscape-1.svg' },
-//   { name: '5', portraitImageUrl: '/movie-poster-1.svg', landscapeImageUrl: '/movie-poster-lanscape-1.svg' },
-// ];
-
-// const movies: Movie[] = Array.from({ length: 5 }, (_, i) => ({
-//   name: `${i + 1}`,
-//   imageUrl: '/movie-poster-1.svg',
-//   portraitImageUrl: '/movie-poster-1.svg',
-//   landscapeImageUrl: '/movie-poster-landscape-1.svg',
-// }));
-
 async function Page() {
-  // const [movies1, movies2, movies3] = await Promise.all([
-  //   fetchMovies('MOVIE', 5),
-  //   fetchMovies('TV', 5),
-  //   fetchMovies('TV_EPISODE', 5),
-  // ]);
-
-  const movies1 = await fetchMovies('MOVIE', 3);
-  const movies2 = await fetchMovies('TV', 3);
-  const movies3 = await fetchMovies('TV_EPISODE', 3);
+  const [popularMovies, topRatedMovies, upcomingMovies] = await Promise.all([
+    fetchMovies('popular', 5),
+    fetchMovies('top_rated', 5),
+    fetchMovies('upcoming', 5),
+  ]);
 
   return (
     <div className="flex bg-black min-h-screen flex-col">
@@ -69,18 +50,18 @@ async function Page() {
 
       <div className="p-2">
         <HighlightMovies
-          title={"Trending Now"}
-          movies={movies1}
+          title={"Popular"}
+          movies={popularMovies}
         />
 
         <HighlightMovies
-          title={"Must-Watch"}
-          movies={movies2}
+          title={"Top Rated"}
+          movies={topRatedMovies}
         />
 
         <HighlightMovies
-          title={"Only on NETFLIX"}
-          movies={movies3}
+          title={"Upcoming"}
+          movies={upcomingMovies}
         />
       </div>
     </div>

@@ -24,21 +24,24 @@ export default function HighlightMovies({
                         >
                             <div className="lg:hidden">
                                 <Image
-                                    src={movie.imageUrl}
+                                    src={movie.posterUrl}
                                     alt="Movie Poster"
                                     width={100}
                                     height={150}
                                     className={"w-[100px] h-[150px]"}
                                 />
                             </div>
-                            <div className="hidden lg:block">
+                            <div className="hidden lg:block w-[150px]">
                                 <Image
-                                    src={movie.imageUrl}
+                                    src={movie.backdropUrl ?? movie.posterUrl}
                                     alt="Movie Poster"
                                     width={389}
                                     height={219}
                                     className={"w-[150px] h-[100px]"}
                                 />
+                                <div className="text-gray-400 text-xs max-w-3xs text-center    line-clamp-2">
+                                    {movie.title}
+                                </div>
                             </div>
                         </Link>
                     </div>

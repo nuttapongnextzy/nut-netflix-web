@@ -6,23 +6,23 @@ import Image from "next/image";
 const movies: Movie[] = [
   {
     title: 'Spider Man',
-    imageUrl: '/movie-poster-1.svg',
+    posterUrl: '/movie-poster-1.svg',
   },
   {
     title: 'Star Wars',
-    imageUrl: '/movie-poster-1.svg',
+    posterUrl: '/movie-poster-1.svg',
   },
   {
     title: 'The Matrix',
-    imageUrl: '/movie-poster-1.svg',
+    posterUrl: '/movie-poster-1.svg',
   },
   {
     title: 'Titanic',
-    imageUrl: '/movie-poster-1.svg',
+    posterUrl: '/movie-poster-1.svg',
   },
   {
     title: 'Squid Game',
-    imageUrl: '/movie-poster-1.svg',
+    posterUrl: '/movie-poster-1.svg',
   },
 ];
 
@@ -54,7 +54,7 @@ const page = () => {
               <div className="flex justify-between items-center m-2">
                 <div className="flex items-center space-x-1">
                   <Image
-                    src={movie.imageUrl}
+                    src={movie.posterUrl}
                     alt="Description of image"
                     width={100}
                     height={150}

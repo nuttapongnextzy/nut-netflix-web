@@ -5,5 +5,8 @@ export type User = {
 
 export type Movie = {
     title: string;
-    imageUrl: string;
+    posterUrl: string;
+    backdropUrl?: string;
+    overview?: string;
+    releaseDate?: string;
 }

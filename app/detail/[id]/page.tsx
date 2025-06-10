@@ -4,7 +4,7 @@ import { Movie } from "../../../lib/definitions";
 
 const movies: Movie[] = Array.from({ length: 5 }, (_, i) => ({
   title: `${i + 1}`,
-  imageUrl: '/movie-poster-1.svg',
+  posterUrl: '/movie-poster-1.svg',
 }));
 
 const page = async (
@@ -67,7 +67,7 @@ const page = async (
                             className="cursor-pointer"
                         >
                             <Image
-                                src={movie.imageUrl}
+                                src={movie.posterUrl}
                                 alt="Description of image"
                                 width={100}
                                 height={150}
