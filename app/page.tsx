@@ -6,6 +6,7 @@ import HighlightMovies from "@/ui/home/highlight-movies";
 import { Metadata } from 'next';
 import TopBar from '../ui/home/top-bar';
 import MovieDetail from '../ui/home/movie-detail';
+import { fetchMovies } from '../lib/data';
 
 // const movies: Movie[] = [
 //   { name: '1', portraitImageUrl: '/movie-poster-1.svg', landscapeImageUrl: '/movie-poster-lanscape-1.svg' },
@@ -15,14 +16,24 @@ import MovieDetail from '../ui/home/movie-detail';
 //   { name: '5', portraitImageUrl: '/movie-poster-1.svg', landscapeImageUrl: '/movie-poster-lanscape-1.svg' },
 // ];
 
-const movies: Movie[] = Array.from({ length: 5 }, (_, i) => ({
-  name: `${i + 1}`,
-  imageUrl: '/movie-poster-1.svg',
-  portraitImageUrl: '/movie-poster-1.svg',
-  landscapeImageUrl: '/movie-poster-landscape-1.svg',
-}));
+// const movies: Movie[] = Array.from({ length: 5 }, (_, i) => ({
+//   name: `${i + 1}`,
+//   imageUrl: '/movie-poster-1.svg',
+//   portraitImageUrl: '/movie-poster-1.svg',
+//   landscapeImageUrl: '/movie-poster-landscape-1.svg',
+// }));
 
-function Page() {
+async function Page() {
+  // const [movies1, movies2, movies3] = await Promise.all([
+  //   fetchMovies('MOVIE', 5),
+  //   fetchMovies('TV', 5),
+  //   fetchMovies('TV_EPISODE', 5),
+  // ]);
+
+  const movies1 = await fetchMovies('MOVIE', 3);
+  const movies2 = await fetchMovies('TV', 3);
+  const movies3 = await fetchMovies('TV_EPISODE', 3);
+
   return (
     <div className="flex bg-black min-h-screen flex-col">
       <div className="relative bg-[url('/main-bg.svg')] bg-cover bg-center bg-no-repeat w-full h-[70vh]">
@@ -59,17 +70,17 @@ function Page() {
       <div className="p-2">
         <HighlightMovies
           title={"Trending Now"}
-          movies={movies}
+          movies={movies1}
         />
 
         <HighlightMovies
           title={"Must-Watch"}
-          movies={movies}
+          movies={movies2}
         />
 
         <HighlightMovies
           title={"Only on NETFLIX"}
-          movies={movies}
+          movies={movies3}
         />
       </div>
     </div>

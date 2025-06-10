@@ -5,34 +5,24 @@ import Image from "next/image";
 
 const movies: Movie[] = [
   {
-    name: 'Spider Man',
+    title: 'Spider Man',
     imageUrl: '/movie-poster-1.svg',
-    portraitImageUrl: '/movie-poster-1.svg',
-    landscapeImageUrl: '/movie-poster-landscape-1.svg',
   },
   {
-    name: 'Star Wars',
+    title: 'Star Wars',
     imageUrl: '/movie-poster-1.svg',
-    portraitImageUrl: '/movie-poster-1.svg',
-    landscapeImageUrl: '/movie-poster-landscape-1.svg',
   },
   {
-    name: 'The Matrix',
+    title: 'The Matrix',
     imageUrl: '/movie-poster-1.svg',
-    portraitImageUrl: '/movie-poster-1.svg',
-    landscapeImageUrl: '/movie-poster-landscape-1.svg',
   },
   {
-    name: 'Titanic',
+    title: 'Titanic',
     imageUrl: '/movie-poster-1.svg',
-    portraitImageUrl: '/movie-poster-1.svg',
-    landscapeImageUrl: '/movie-poster-landscape-1.svg',
   },
   {
-    name: 'Squid Game',
+    title: 'Squid Game',
     imageUrl: '/movie-poster-1.svg',
-    portraitImageUrl: '/movie-poster-1.svg',
-    landscapeImageUrl: '/movie-poster-landscape-1.svg',
   },
 ];
 
@@ -71,7 +61,7 @@ const page = () => {
                     className=""
                   />
                   <div className="text-white text-sm font-bold">
-                    {movie.name}
+                    {movie.title}
                   </div>
                 </div>
 
