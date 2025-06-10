@@ -4,7 +4,7 @@ import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
 
 export default function TopBar() {
   return (
-    <div className="flex items-center justify-between px-3 pt-6">
+    <div className="flex items-center justify-between px-3 pt-6 lg:pt-0">
       <Image
         src="/netflix-logo.svg"
         alt="Netflix logo"
@@ -22,11 +22,11 @@ export default function TopBar() {
         />
 
         <div className="flex space-x-5">
-          <Link href="#" className="text-white text-xl font-bold">Home</Link>
-          <Link href="#" className="text-zinc-300 text-xl font-normal">TV Shows</Link>
-          <Link href="#" className="text-zinc-300 text-xl font-normal">Movies</Link>
-          <Link href="#" className="text-zinc-300 text-xl font-normal">News & Popular</Link>
-          <Link href="#" className="text-zinc-300 text-xl font-normal">Browse by Languages</Link>
+          <Link href="#" className="text-white text-sm font-bold">Home</Link>
+          <Link href="#" className="text-zinc-300 text-sm font-normal">TV Shows</Link>
+          <Link href="#" className="text-zinc-300 text-sm font-normal">Movies</Link>
+          <Link href="#" className="text-zinc-300 text-sm font-normal">News & Popular</Link>
+          <Link href="#" className="text-zinc-300 text-sm font-normal">Browse by Languages</Link>
         </div>
       </div>
 

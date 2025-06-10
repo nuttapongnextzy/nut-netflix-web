@@ -39,7 +39,7 @@ export default function HighlightMovies({
                                     height={219}
                                     className={"w-[150px] h-[100px]"}
                                 />
-                                <div className="text-gray-400 text-xs max-w-3xs text-center    line-clamp-2">
+                                <div className="text-gray-400 text-xs max-w-3xs text-center font-bold line-clamp-2">
                                     {movie.title}
                                 </div>
                             </div>
