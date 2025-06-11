@@ -5,22 +5,27 @@ import Image from "next/image";
 
 const movies: Movie[] = [
   {
+    id: '1',
     title: 'Spider Man',
     posterUrl: '/movie-poster-1.svg',
   },
   {
+    id: '1',
     title: 'Star Wars',
     posterUrl: '/movie-poster-1.svg',
   },
   {
+    id: '1',
     title: 'The Matrix',
     posterUrl: '/movie-poster-1.svg',
   },
   {
+    id: '1',
     title: 'Titanic',
     posterUrl: '/movie-poster-1.svg',
   },
   {
+    id: '1',
     title: 'Squid Game',
     posterUrl: '/movie-poster-1.svg',
   },

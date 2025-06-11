@@ -1,7 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
 import { PlusIcon, InformationCircleIcon } from '@heroicons/react/24/solid';
-import { Movie } from "../lib/definitions";
 import HighlightMovies from "@/ui/home/highlight-movies";
 import { Metadata } from 'next';
 import TopBar from '../ui/home/top-bar';

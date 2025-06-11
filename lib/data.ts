@@ -30,6 +30,7 @@ export async function fetchMovies(
     const json = await res.json();
 
     const movies: Movie[] = json.results.map((element) => ({
+        id: element.id,
         title: element.title,
         posterUrl: `${baseImageUrl}${element.poster_path}`,
         backdropUrl: `${baseImageUrl}${element.backdrop_path}`,
@@ -38,6 +39,38 @@ export async function fetchMovies(
     }));
 
     return movies.slice(0, total);
+}
+
+export async function fetchMovieDetail(
+    id: string,
+) {
+    const url = new URL(`${baseUrl}3/movie/${id}`);
+
+    url.search = new URLSearchParams({
+        language: 'en-US',
+    }).toString();
+
+    const res = await fetch(url, {
+        method: 'GET',
+        headers: headers,
+    });
+
+    if (!res.ok) {
+        throw new Error(`TMDB fetch failed: ${res.statusText}`);
+    }
+
+    const element = await res.json();
+
+    const movie: Movie = {
+        id: element.id,
+        title: element.title,
+        posterUrl: `${baseImageUrl}${element.poster_path}`,
+        backdropUrl: `${baseImageUrl}${element.backdrop_path}`,
+        overview: element.overview,
+        releaseDate: element.release_date,
+    }
+
+    return movie;
 }
 
 function randomNum(min: number, max: number) {

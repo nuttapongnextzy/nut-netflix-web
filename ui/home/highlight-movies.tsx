@@ -19,7 +19,7 @@ export default function HighlightMovies({
                         key={index}
                     >
                         <Link
-                            href="/detail/1"
+                            href={`/detail/${movie.id}`}
                             className="cursor-pointer block"
                         >
                             <div className="lg:hidden">

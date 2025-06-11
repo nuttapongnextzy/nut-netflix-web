@@ -1,10 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Movie } from "../../../lib/definitions";
+import { fetchMovieDetail } from '../../../lib/data';
 
 const movies: Movie[] = Array.from({ length: 5 }, (_, i) => ({
-  title: `${i + 1}`,
-  posterUrl: '/movie-poster-1.svg',
+    id: `${i + 1}`,
+    title: `${i + 1}`,
+    posterUrl: '/movie-poster-1.svg',
 }));
 
 const page = async (
@@ -15,30 +17,27 @@ const page = async (
         }>,
     }) => {
     const params = await props.params;
-    console.log(`params: ${params.id}}`)
+    console.log(`params: ${params.id}`)
 
     const searchParams = await props.searchParams;
     console.log(`searchParams: ${searchParams?.query}`)
 
+    const movie = await fetchMovieDetail(params.id);
+    console.log(`movie : ${movie.title}`);
+
     return (
         <div className="bg-black min-h-screen">
-            <div className="relative h-60">
-                <Image
-                    src="/movie-screenshot-1.svg"
-                    alt=""
-                    fill
-                    // width={360}
-                    // height={180}
-                    className="object-cover"
-                />
+            <div
+                style={{ backgroundImage: `url(${movie.backdropUrl})` }}
+                className='bg-cover sm:bg-contain bg-center bg-no-repeat h-[30vh] sm:h-[40vh]'>
             </div>
 
-            <h1 className="text-white text-2xl font-bold p-1">
-                Title
+            <h1 className="text-white text-3xl font-bold p-1">
+                {movie.title}
             </h1>
 
-            <h2 className="text-white/50 text-[10px] font-normal p-1">
-                2015
+            <h2 className="text-white/50 text-sm font-normal p-1">
+                {new Date(movie.releaseDate ?? '').getFullYear()}
             </h2>
 
             <div className="p-1 mt-5">
@@ -50,8 +49,8 @@ const page = async (
                 </Link>
             </div>
 
-            <h3 className="text-white text-[10px] font-normal p-1">
-                Fifty Shades of Grey is a 2011 erotic romance novel by British author E. L. James. It became the first instalment in the Fifty Shades novel series that follows the deepening relationship between a college graduate, Anastasia Steele, and a young business magnate, Christian Grey.
+            <h3 className="text-white text-sm font-normal p-1">
+                {movie.overview}
             </h3>
 
             <hr className="h-[0.50px] bg-white mt-10" />

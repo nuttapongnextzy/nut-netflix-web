@@ -4,6 +4,7 @@ export type User = {
 }
 
 export type Movie = {
+    id: string;
     title: string;
     posterUrl: string;
     backdropUrl?: string;
