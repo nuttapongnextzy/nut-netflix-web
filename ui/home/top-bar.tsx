@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
+import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 
 export default function TopBar() {
   return (
@@ -19,6 +19,7 @@ export default function TopBar() {
           alt="Netflix logo"
           width={139}
           height={38}
+          className="w-24 h-auto"
         />
 
         <div className="flex space-x-5">

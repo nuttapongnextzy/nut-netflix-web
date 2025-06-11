@@ -4,8 +4,11 @@ import { InformationCircleIcon } from '@heroicons/react/24/outline';
 
 export default function MovieDetail() {
   return (
-    <div className="absolute w-80 m-5 lg:w-120 bottom-0 left-1/2 -translate-x-1/2 lg:bottom-1/2 lg:left-0 lg:translate-x-0 lg:translate-y-1/2">
-
+    <div className="
+        absolute w-80 lg:w-1/3
+        left-1/2 -translate-x-1/2 bottom-5 
+        lg:left-0 lg:translate-x-0 lg:bottom-1/2 lg:translate-y-1/2 lg:ml-5
+    ">
       <div className="flex justify-center lg:justify-start items-center space-x-2 space-y-2">
         <Image
           src="/netflix-logo.svg"
