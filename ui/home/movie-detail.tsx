@@ -34,8 +34,16 @@ export default function MovieDetail() {
         <div className="text-white">Based on Books</div>
       </div>
 
-      <div className="hidden lg:block text-white text-2xl font-bold mt-5">
-        #1 in TV Shows Today
+      <div className="hidden lg:flex mt-5 space-x-1">
+        <Image
+          src="/top10-icon.svg"
+          alt="top 10"
+          width={22}
+          height={22}
+        />
+        <div className="text-white text-2xl font-bold">
+          #1 in TV Shows Today
+        </div>
       </div>
 
       <div className="hidden lg:block text-white mt-5">
