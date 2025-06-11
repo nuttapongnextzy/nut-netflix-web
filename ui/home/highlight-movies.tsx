@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Movie } from "../../lib/definitions";
+import { Movie } from "@/lib/definitions";
 
 export default function HighlightMovies({
     title, movies,

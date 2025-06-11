@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { User } from "../../lib/definitions";
+import { User } from "@/lib/definitions";
 
 export default function UserTable({users}: {users: User[]}) {
     return (

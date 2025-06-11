@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import UserTable from "@/ui/select-profile/user-table";
-import { User } from "../../lib/definitions";
+import { User } from "@/lib/definitions";
 import { PencilSquareIcon } from '@heroicons/react/24/outline';
 import { Metadata } from 'next';
 

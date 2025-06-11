@@ -26,5 +26,5 @@ body {
 }
 
 * {
-  @apply border border-gray-300;
+  /* @apply border border-gray-300; */
 }

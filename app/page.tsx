@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { PlusIcon, InformationCircleIcon } from '@heroicons/react/24/solid';
+import { PlusIcon, InformationCircleIcon } from '@heroicons/react/24/outline';
 import HighlightMovies from "@/ui/home/highlight-movies";
 import { Metadata } from 'next';
-import TopBar from '../ui/home/top-bar';
-import MovieDetail from '../ui/home/movie-detail';
-import { fetchMovies } from '../lib/data';
+import TopBar from '@/ui/home/top-bar';
+import MovieDetail from '@/ui/home/movie-detail';
+import { fetchMovies } from '@/lib/data';
 
 async function Page() {
   const [popularMovies, topRatedMovies, upcomingMovies] = await Promise.all([

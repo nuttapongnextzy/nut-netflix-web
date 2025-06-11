@@ -1,5 +1,5 @@
 import React from "react"
-import { Movie } from "../../lib/definitions";
+import { Movie } from "@/lib/definitions";
 import Link from "next/link";
 import Image from "next/image";
 

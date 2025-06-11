@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
+import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 
 export default function TopBar() {
   return (

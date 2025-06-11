@@ -1,4 +1,5 @@
-import { Movie } from "../lib/definitions";
+import { Movie } from "@/lib/definitions";
+import { randomNum} from "@/lib/utils/number-utils";
 
 const baseUrl = 'https://api.themoviedb.org/';
 const headers = {
@@ -73,6 +74,3 @@ export async function fetchMovieDetail(
     return movie;
 }
 
-function randomNum(min: number, max: number) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
