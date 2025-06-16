@@ -1,4 +1,4 @@
-import { Movie } from "@/lib/definitions";
+import { Movie, User } from "@/lib/definitions";
 
 const baseUrl = 'http://localhost:4000/api/';
 
@@ -63,5 +63,26 @@ export async function fetchMovieDetail(
     }
 
     return movie;
+}
+
+export async function fetchProfiles() {
+    const url = new URL(`${baseUrl}profiles`);
+
+    const res = await fetch(url, {
+        method: 'GET',
+    });
+
+    if (!res.ok) {
+        throw new Error(`TMDB fetch failed: ${res.statusText}`);
+    }
+
+    const json = await res.json();
+
+    const users: User[] = json.map((element) => ({
+        name: element.name,
+        imageUrl: element.imageUrl,
+    }));
+
+    return users;
 }
 

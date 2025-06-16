@@ -4,16 +4,11 @@ import UserTable from "@/ui/select-profile/user-table";
 import { User } from "@/lib/definitions";
 import { PencilSquareIcon } from '@heroicons/react/24/outline';
 import { Metadata } from 'next';
+import { fetchProfiles } from "@/lib/data";
 
-const users: User[] = [
-    { name: 'DH', imageUrl: '/user-1.svg' },
-    { name: 'Alan', imageUrl: '/user-2.svg' },
-    { name: 'Sam', imageUrl: '/user-3.svg' },
-    { name: 'John"', imageUrl: '/user-4.svg' },
-    { name: 'Adult', imageUrl: '/user-5.svg' },
-];
+async function Page() {
+    const users = await fetchProfiles();
 
-function Page() {
     return (
         <div className="flex flex-col bg-black min-h-screen items-center">
             <div>
