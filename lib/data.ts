@@ -1,27 +1,19 @@
 import { Movie } from "@/lib/definitions";
-import { randomNum} from "@/lib/utils/number-utils";
 
-const baseUrl = 'https://api.themoviedb.org/';
-const headers = {
-    accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2N2E1NmVmNDJkODFiMzA4MTA0OWRmOTczN2U5YjljNiIsIm5iZiI6MTY2NDE4MzU3My44MDQsInN1YiI6IjYzMzE2ZDE1NjYzYjg3MDA4NTU5NzYyNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.XS_qCIwHUx2j2Uft3av_OeYiQbulucDh5U4tsosxf2Q',
-};
-const baseImageUrl = 'https://image.tmdb.org/t/p/w500/';
+const baseUrl = 'http://localhost:4000/api/';
 
 export async function fetchMovies(
     type: string,
     total: number,
 ) {
-    const url = new URL(`${baseUrl}3/movie/${type}`);
+    const url = new URL(`${baseUrl}movies/${type}`);
 
     url.search = new URLSearchParams({
-        page: randomNum(1, 5).toString(),
-        language: 'en-US',
+        total: total.toString(),
     }).toString();
 
     const res = await fetch(url, {
         method: 'GET',
-        headers: headers,
     });
 
     if (!res.ok) {
@@ -30,22 +22,22 @@ export async function fetchMovies(
 
     const json = await res.json();
 
-    const movies: Movie[] = json.results.map((element) => ({
+    const movies: Movie[] = json.map((element) => ({
         id: element.id,
         title: element.title,
-        posterUrl: `${baseImageUrl}${element.poster_path}`,
-        backdropUrl: `${baseImageUrl}${element.backdrop_path}`,
+        posterUrl: element.posterUrl,
+        backdropUrl: element.backdropUrl,
         overview: element.overview,
-        releaseDate: element.release_date,
+        releaseDate: element.releaseDate,
     }));
 
-    return movies.slice(0, total);
+    return movies;
 }
 
 export async function fetchMovieDetail(
     id: string,
 ) {
-    const url = new URL(`${baseUrl}3/movie/${id}`);
+    const url = new URL(`${baseUrl}movies/${id}`);
 
     url.search = new URLSearchParams({
         language: 'en-US',
@@ -53,7 +45,6 @@ export async function fetchMovieDetail(
 
     const res = await fetch(url, {
         method: 'GET',
-        headers: headers,
     });
 
     if (!res.ok) {
@@ -65,10 +56,10 @@ export async function fetchMovieDetail(
     const movie: Movie = {
         id: element.id,
         title: element.title,
-        posterUrl: `${baseImageUrl}${element.poster_path}`,
-        backdropUrl: `${baseImageUrl}${element.backdrop_path}`,
+        posterUrl: element.posterUrl,
+        backdropUrl: element.backdropUrl,
         overview: element.overview,
-        releaseDate: element.release_date,
+        releaseDate: element.releaseDate,
     }
 
     return movie;
