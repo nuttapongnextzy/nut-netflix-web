@@ -1,4 +1,4 @@
-import { Movie, User } from "@/lib/definitions";
+import { Movie, Profile } from "@/lib/definitions";
 
 const baseUrl = 'http://localhost:4000/api/';
 
@@ -78,7 +78,7 @@ export async function fetchProfiles() {
 
     const json = await res.json();
 
-    const users: User[] = json.map((element) => ({
+    const users: Profile[] = json.map((element) => ({
         name: element.name,
         imageUrl: element.imageUrl,
     }));

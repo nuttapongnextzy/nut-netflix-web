@@ -1,13 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
-import UserTable from "@/ui/select-profile/user-table";
-import { User } from "@/lib/definitions";
+import ProfileTable from "@/ui/select-profile/profile-table";
 import { PencilSquareIcon } from '@heroicons/react/24/outline';
 import { Metadata } from 'next';
 import { fetchProfiles } from "@/lib/data";
 
 async function Page() {
-    const users = await fetchProfiles();
+    const profiles = await fetchProfiles();
 
     return (
         <div className="flex flex-col bg-black min-h-screen items-center">
@@ -25,7 +24,7 @@ async function Page() {
                 <h1 className="mt-30 text-white text-center text-lg font-bold">Who's watching?</h1>
             </div>
 
-            <UserTable users={users} />
+            <ProfileTable profiles={profiles} />
 
             <div className="mt-20 mb-10">
                 <Link
