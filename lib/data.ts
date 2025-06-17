@@ -78,11 +78,11 @@ export async function fetchProfiles() {
 
     const json = await res.json();
 
-    const users: Profile[] = json.map((element) => ({
-        name: element.name,
+    const profiles: Profile[] = json.map((element) => ({
+        username: element.username,
         imageUrl: element.imageUrl,
     }));
 
-    return users;
+    return profiles;
 }
 
